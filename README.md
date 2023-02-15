@@ -23,7 +23,7 @@ Input = Human Pose and eye-gaze data
 
 Output = Intention
 
-In our dataset, we have records of 6 people. 
+In our dataset, there are records of 6 people. 
 
 Our training dataset consists of person 1, person 2, person 4, person 5 and person 6 records.
 
