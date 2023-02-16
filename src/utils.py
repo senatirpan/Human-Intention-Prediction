@@ -11,6 +11,7 @@ from src.config import (
     train_subjects,
     test_subjects,
 )
+from src.result_visualisation import Player_Skeleton
 
 def load_dataset():
     train_dataset = Pose_Gaze_Intention(data_dir, train_subjects, input_n, output_n, actions, sample_rate=10)
@@ -95,6 +96,7 @@ def test(test_loader, model, device, criterion):
 
             pose_gaze_data = inputs[:, :10, :66].float()
             seg_intention_data = inputs[:, 10, 66:].float()
+            pose_data = inputs[:, 10, :63]
 
             # Forward pass
             outputs = model(pose_gaze_data)
@@ -125,5 +127,9 @@ def test(test_loader, model, device, criterion):
     # Compute the loss
     test_loss = criterion(output, target)
     print(f'Test Loss: {test_loss:.4f}')
+
+    # If you want to visualize the test results, uncomment the following line.
+    # player = Player_Skeleton()
+    # player.play_xyz(pose_data, seg_intention_data, outputs)
 
     return theta_list, theta_gaze_list

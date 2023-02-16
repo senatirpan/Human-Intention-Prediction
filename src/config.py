@@ -1,4 +1,4 @@
-data_dir = "/home/kuanyu/Documents/GitHub/mpl-ws2223_group5/data"
+data_dir = ""
 input_n = 10
 output_n = 1
 actions = "pick"

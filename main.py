@@ -46,6 +46,7 @@ if __name__ == "__main__":
     train(num_epochs, train_loader, model, device, criterion, optimizer)
 
     # Eval the model
+    # If you want to see visualisation of test result, please uncomment the lines in the utils.py
     pred_list, baseline_list = test(test_loader, model, device, criterion)
     error_model, error_baseline = evaluation(pred_list, baseline_list)
     print(f'Your model predition error angle is {error_model:.2f}.\nThe baseline error angle is {error_baseline:.2f}')
